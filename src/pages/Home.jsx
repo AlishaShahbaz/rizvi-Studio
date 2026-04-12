@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion"; // Optional: For smooth reveals
-import heroImage from "../assets/Screenshot 2026-04-12 224858.png";
-import img1 from "../assets/Screenshot 2026-04-12 224745.png";
+import heroImage from "../assets/hero-img1.png";
+import img1 from "../assets/studio-img-l.png";
 import img2 from "../assets/Screenshot_20260413_014238.jpeg";
 import img3 from "../assets/Screenshot_20260413_014344.jpeg";
 import img4 from "../assets/Screenshot_20260413_014323.jpeg";

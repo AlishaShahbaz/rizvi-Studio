@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import heroImage from "../assets/Screenshot 2026-04-12 224858.png";
+import heroImage from "../assets/hero-img1.png";
 import Navbar from "../components/Navbar";
 
 const Contact = () => {

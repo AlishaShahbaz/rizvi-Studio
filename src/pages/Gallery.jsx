@@ -1,15 +1,16 @@
 import React, { useState } from 'react';
 import { Link } from "react-router-dom";
-import heroImage from "../assets/Screenshot 2026-04-12 224858.png"; 
+import heroImage from "../assets/hero-img1.png"; 
 import Navbar from '../components/Navbar';
 
 // --- APKI IMPORTED IMAGES ---
-import feature_studio from "../assets/WhatsApp Image 2026-04-12 at 11.47.20 PM.jpeg";
+import feature_studio from "../assets/wedding-feature.jpeg";
 import img1 from "../assets/Screenshot 2026-04-12 224745.png";
 import img2 from "../assets/Screenshot_20260413_014238.jpeg";
 import img3 from "../assets/Screenshot_20260413_014344.jpeg";
 import img4 from "../assets/Screenshot_20260413_014323.jpeg";
-import img5 from "../assets/Screenshot_20260413_014353.jpeg"; // Ye lambi wali image
+import img5 from "../assets/Screenshot_20260413_014353.jpeg"; 
+
 
 const Gallery = () => {
   // Array mein img5 ko top par rakha hai

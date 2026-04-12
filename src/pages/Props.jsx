@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import heroImage from "../assets/Screenshot 2026-04-12 224858.png";
+import heroImage from "../assets/hero-img1.png";
 import Navbar from "../components/Navbar"; 
 
 // --- APKI IMPORTED IMAGES ---
@@ -9,7 +9,7 @@ import img3 from "../assets/Screenshot_20260413_014344.jpeg";
 import img4 from "../assets/Screenshot_20260413_014323.jpeg";
 import img5 from "../assets/Screenshot_20260413_014353.jpeg"; 
 import img6 from "../assets/Screenshot_20260413_0143441.jpeg"; 
-import img7 from "../assets/WhatsApp Image 2026-04.jpeg"; 
+import img7 from "../assets/wedding-feature.jpeg"; 
 import img8 from "../assets/Screenshot_20260413_01425.jpeg"; 
 import img9 from "../assets/Screenshot_20260413_014251.jpeg"; 
 import img10 from "../assets/Screenshot_20260413_015245.jpeg";
