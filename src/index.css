@@ -1,0 +1,19 @@
+@import "tailwindcss";
+
+@theme {
+  --color-hsq-cream: #FBEED2;
+  --color-hsq-rose: #AA817E;
+  --color-hsq-peach: #FCCEAB;
+  --color-hsq-sage: #A19D70;
+  --color-hsq-earth: #504027;
+}
+
+:root {
+  background-color: #FBEED2 !important;
+  color: #504027;
+}
+
+body {
+  margin: 0;
+  background-color: #FBEED2 !important;
+}
