@@ -1,11 +1,14 @@
 import { Link } from "react-router-dom";
-import { motion } from "framer-motion"; // Optional: For smooth reveals
-import heroImage from "../assets/hero-img1.png";
-import img1 from "../assets/studio-img-l.png";
-import img2 from "../assets/Screenshot_20260413_014238.jpeg";
-import img3 from "../assets/Screenshot_20260413_014344.jpeg";
-import img4 from "../assets/Screenshot_20260413_014323.jpeg";
-import studioVideo from "../assets/VID_20260412_133915_588.mp4"; // Aapki file ka sahi path
+import { motion } from "framer-motion";
+import heroImage from "../assets/prop1.png";
+import heroVideo from "../assets/hero-video.mp4"; // Video import updated
+
+// --- IMAGES IMPORT (prop1 to prop18) ---
+import prop1 from "../assets/prop2.png";
+import prop2 from "../assets/prop8.jpeg";
+import prop3 from "../assets/prop5.jpeg";
+import prop4 from "../assets/prop14.jpeg";
+// Note: Agar aapne prop5-prop18 use karni hain to wo bhi aise hi import hongi
 
 const Home = () => {
     return (
@@ -64,7 +67,7 @@ const Home = () => {
                             </div>
                         </div>
 
-                        {/* QUICK STATS (Upgrade) */}
+                        {/* QUICK STATS */}
                         <div className="lg:col-span-4 grid grid-cols-2 gap-4">
                             {[["100+", "Sets"], ["24/7", "Support"], ["15k", "Props"], ["10yr", "Exp"]].map(([val, label]) => (
                                 <div key={label} className="glass-panel p-6 border-white/5 bg-white/5 text-center">
@@ -76,7 +79,7 @@ const Home = () => {
                     </div>
                 </section>
 
-                {/* --- FEATURED SERVICES (The Upgrade) --- */}
+                {/* --- FEATURED SERVICES --- */}
                 <section className="grid md:grid-cols-3 gap-6">
                     <div className="glass-panel p-10 space-y-4 hover:bg-white/5 transition-all">
                         <div className="w-12 h-12 rounded-full border border-hsq-peach/30 flex items-center justify-center mb-4 text-hsq-peach">01</div>
@@ -109,20 +112,20 @@ const Home = () => {
 
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                         {[
-                            { id: 1, src: img1, label: "Editorial Shoot" },
-                            { id: 2, src: img2, label: "Fashion Campaign" },
-                            { id: 3, src: img3, label: "Product Set" },
-                            { id: 4, src: img4, label: "TVC Production" },
+                            { id: 1, src: prop1, label: "Editorial Shoot" },
+                            { id: 2, src: prop2, label: "Fashion Campaign" },
+                            { id: 3, src: prop3, label: "Product Set" },
+                            { id: 4, src: prop4, label: "TVC Production" },
                         ].map((item) => (
                             <div key={item.id} className="glass-panel !p-0 aspect-[3/4] overflow-hidden group relative border-white/5">
                                 <img
-                                    src={item.src} // Ab har bar alag image load hogi
+                                    src={item.src}
                                     className="w-full h-full object-cover grayscale-0 group-hover:grayscale transition-all duration-700 group-hover:scale-110"
                                     alt={item.label}
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-all p-6 flex items-end">
                                     <p className="text-[10px] uppercase tracking-widest font-bold text-hsq-peach">
-                                        {item.label} {/* Har image ka text bhi alag ho jayega */}
+                                        {item.label}
                                     </p>
                                 </div>
                             </div>
@@ -130,7 +133,7 @@ const Home = () => {
                     </div>
                 </section>
 
-                {/* --- 2. THE PROCESS (Quick Steps) --- */}
+                {/* --- 2. THE PROCESS --- */}
                 <section className="glass-panel p-10 md:p-20 bg-white/5 border-white/5">
                     <div className="grid md:grid-cols-2 gap-16 items-center">
                         <div className="space-y-8">
@@ -156,29 +159,26 @@ const Home = () => {
                         </div>
                         <div className="relative aspect-video rounded-[40px] overflow-hidden glass-panel !p-0 border-white/20 group cursor-pointer">
                             <motion.video
-                                src={studioVideo}
+                                src={heroVideo}
                                 autoPlay
                                 muted
                                 loop
                                 playsInline
                                 whileHover={{
-                                    scale: 1.1,
-                                    rotate: 2, // Tilt effect
+                                    scale: 1.05,
+                                    rotate: 1,
                                     transition: { duration: 0.5 }
                                 }}
                                 className="w-full h-full object-cover opacity-60"
                             />
-
-                            {/* Baki overlay code wese hi rahega */}
                         </div>
                     </div>
                 </section>
 
-                {/* --- 3. TRUSTED BY (Client Logos) --- */}
+                {/* --- 3. TRUSTED BY --- */}
                 <section className="py-10 border-y border-white/5">
                     <p className="text-[9px] uppercase tracking-[0.5em] text-center mb-10 opacity-40 font-bold">Partners in Excellence</p>
-                    <div className="flex flex-wrap justify-center items-center gap-12 md:gap-24 opacity-30 grayscale hover:grayscale-0 transition-all">
-                        {/* Replace with actual brand names/logos */}
+                    <div className="flex flex-wrap justify-center items-center gap-12 md:gap-24 opacity-30 grayscale hover:grayscale-0 transition-all text-white">
                         <span className="text-2xl font-black tracking-tighter italic">NISHAT</span>
                         <span className="text-2xl font-black tracking-tighter italic">KHAADI</span>
                         <span className="text-2xl font-black tracking-tighter italic">SAPPHIRE</span>
@@ -190,7 +190,7 @@ const Home = () => {
                 <footer className="glass-panel p-8 flex flex-col md:flex-row justify-between items-center gap-6">
                     <p className="text-[11px] uppercase tracking-[0.4em] opacity-40">Shadab, Lahore, Pakistan</p>
                     <div className="flex gap-8">
-                        {['Instagram', 'WhatsApp', 'LinkedIn'].map(social => (
+                        {['Instagram', 'WhatsApp'].map(social => (
                             <a key={social} href="#" className="text-[11px] uppercase tracking-widest hover:text-hsq-peach transition-all">{social}</a>
                         ))}
                     </div>

@@ -1,32 +1,32 @@
 import { Link } from "react-router-dom";
-import heroImage from "../assets/hero-img1.png";
 import Navbar from "../components/Navbar"; 
 
-// --- APKI IMPORTED IMAGES ---
-import img1 from "../assets/Screenshot 2026-04-12 224745.png";
-import img2 from "../assets/Screenshot_20260413_014238.jpeg";
-import img3 from "../assets/Screenshot_20260413_014344.jpeg";
-import img4 from "../assets/Screenshot_20260413_014323.jpeg";
-import img5 from "../assets/Screenshot_20260413_014353.jpeg"; 
-import img6 from "../assets/Screenshot_20260413_0143441.jpeg"; 
-import img7 from "../assets/wedding-feature.jpeg"; 
-import img8 from "../assets/Screenshot_20260413_01425.jpeg"; 
-import img9 from "../assets/Screenshot_20260413_014251.jpeg"; 
-import img10 from "../assets/Screenshot_20260413_015245.jpeg";
+// --- CLEAN & RENAMED IMPORTS (prop1 to prop18 format) ---
+import propHeroBG from "../assets/prop1.png"; // Hero/Background setup
+import prop1 from "../assets/prop1.png";
+import prop2 from "../assets/prop2.png";
+import prop3 from "../assets/prop3.png";
+import prop4 from "../assets/prop4.jpeg";
+import prop5 from "../assets/prop5.jpeg"; 
+import prop6 from "../assets/prop6.jpeg"; 
+import prop7 from "../assets/prop7.jpeg"; 
+import prop8 from "../assets/prop8.jpeg"; 
+import prop9 from "../assets/prop9.jpeg"; 
+import prop10 from "../assets/prop10.jpeg";
+// Agar prop11 se prop18 tak use karni hain to wo bhi isi tarah add kar lein.
 
 const Props = () => {
-    // Sab images ko ek array mein arrange kiya hai
     const propItems = [
-        { src: img1, name: "Luxury Setup", cat: "Studio Tools" },
-        { src: img2, name: "Vintage Piece", cat: "Antique Collection" },
-        { src: img3, name: "Modern Prop", cat: "Creative Objects" },
-        { src: img4, name: "Minimal Accent", cat: "Studio Tools" },
-        { src: img5, name: "Texture Backdrop", cat: "Textured Backdrops" },
-        { src: img6, name: "Production Gear", cat: "Studio Tools" },
-        { src: img7, name: "Aesthetic Object", cat: "Creative Objects" },
-        { src: img8, name: "Premium Chair", cat: "Luxury Items" },
-        { src: img9, name: "Art Deco", cat: "Vintage Props" },
-        { src: img10, name: "Grand Asset", cat: "Luxury Items" },
+        { src: prop1, name: "Luxury Setup", cat: "Studio Tools" },
+        { src: prop2, name: "Vintage Piece", cat: "Antique Collection" },
+        { src: prop3, name: "Modern Prop", cat: "Creative Objects" },
+        { src: prop4, name: "Minimal Accent", cat: "Studio Tools" },
+        { src: prop5, name: "Texture Backdrop", cat: "Textured Backdrops" },
+        { src: prop6, name: "Production Gear", cat: "Studio Tools" },
+        { src: prop7, name: "Aesthetic Object", cat: "Creative Objects" },
+        { src: prop8, name: "Premium Chair", cat: "Luxury Items" },
+        { src: prop9, name: "Art Deco", cat: "Vintage Props" },
+        { src: prop10, name: "Grand Asset", cat: "Luxury Items" },
     ];
 
     return (
@@ -34,16 +34,17 @@ const Props = () => {
         <Navbar/>
         <div className="relative min-h-screen w-full text-white font-sans selection:bg-hsq-peach selection:text-hsq-earth">
 
-            {/* 🖼️ FIXED BACKGROUND */}
+            {/* --- FIXED BACKGROUND LAYER --- */}
             <div className="fixed inset-0 -z-20">
                 <img
-                    src={heroImage}
+                    src={propHeroBG} 
                     className="w-full h-full object-cover"
-                    alt="Prop Library Background"
+                    alt="Props Page Background"
                 />
                 <div className="absolute inset-0 brand-overlay"></div>
             </div>
 
+            {/* --- SECTION CONTENT LAYER --- */}
             <main className="relative z-10 p-4 md:p-10 max-w-[1600px] mx-auto pt-32 pb-20 space-y-12">
                 
                 {/* BREADCRUMBS */}
@@ -60,7 +61,7 @@ const Props = () => {
                         { step: "02", title: "Select", desc: "Choose items that match your creative theme." },
                         { step: "03", title: "Create", desc: "Integrate assets into your set seamlessly." }
                     ].map((item, i) => (
-                        <div key={i} className="glass-panel p-8 bg-white/5 border-white/10 hover:bg-white/10 transition-all">
+                        <div key={i} className="glass-panel p-8 bg-white/5 border-white/5 hover:bg-white/10 transition-all">
                             <span className="text-hsq-peach font-black text-sm tracking-widest uppercase italic">{item.step} — Process</span>
                             <h3 className="font-bold text-2xl mt-2 tracking-tighter uppercase italic">{item.title}</h3>
                             <p className="text-white/50 text-sm mt-2 font-light">{item.desc}</p>
@@ -80,14 +81,14 @@ const Props = () => {
                     </div>
                 </section>
 
-                {/* --- PROP GRID (Using your imported images) --- */}
+                {/* --- PROP GRID --- */}
                 <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-6">
                     {propItems.map((item, i) => (
                         <div key={i} className="group cursor-pointer">
                             <div className="glass-panel !p-0 aspect-square overflow-hidden mb-4 border-white/5 relative">
                                 <img
-                                    src={item.src} // Imported image use ho rahi hai
-                                    className="w-full h-full object-cover group-hover:scale-110 transition duration-1000 opacity-80 group-hover:opacity-100"
+                                    src={item.src} 
+                                    className="w-full h-full object-cover group-hover:scale-110 transition duration-1000 opacity-90 group-hover:opacity-100"
                                     alt={item.name}
                                 />
                                 <div className="absolute inset-0 bg-hsq-peach/10 opacity-0 group-hover:opacity-100 transition-opacity" />
@@ -104,7 +105,7 @@ const Props = () => {
                     ))}
                 </div>
 
-                {/* --- UPGRADED CTA --- */}
+                {/* --- FINAL CTA --- */}
                 <section className="glass-panel py-20 text-center space-y-8 bg-white/5 border-white/5">
                     <div className="space-y-4">
                         <h3 className="text-4xl md:text-5xl font-black uppercase tracking-tighter leading-none">

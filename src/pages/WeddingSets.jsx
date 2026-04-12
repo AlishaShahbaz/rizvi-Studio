@@ -1,12 +1,15 @@
 import { Link } from "react-router-dom";
-import heroImage from "../assets/hero-img1.png";
+import heroImage from "../assets/prop1.png"; // Updated as per your list
 import Navbar from "../components/Navbar"; 
-import img1 from "../assets/Screenshot 2026-04-12 224745.png";
-import img2 from "../assets/Screenshot_20260413_014238.jpeg";
-import img3 from "../assets/Screenshot_20260413_014344.jpeg";
-import img4 from "../assets/Screenshot_20260413_014323.jpeg";
-import img5 from "../assets/Screenshot_20260413_014353.jpeg"; 
-import img6 from "../assets/Screenshot_20260413_0143441.jpeg"; 
+
+// --- CLEANED IMPORTS (prop1 to prop18 format) ---
+import img1 from "../assets/prop1.png";
+import img2 from "../assets/prop2.png";
+import img3 from "../assets/prop8.jpeg";
+import img4 from "../assets/prop5.jpeg";
+import img5 from "../assets/prop11.jpeg";
+import img6 from "../assets/prop15.jpeg"; 
+import img7 from "../assets/prop13.jpeg"; 
 
 
 const WeddingSets = () => {
@@ -56,12 +59,12 @@ const WeddingSets = () => {
             ))}
           </div>
 
-          {/* --- SETS GALLERY GRID (Ab aapki images load hongi) --- */}
+          {/* --- SETS GALLERY GRID --- */}
           <div className="grid md:grid-cols-3 gap-8">
             {weddingGallery.map((imgSrc, i) => (
               <div key={i} className="glass-panel !p-0 overflow-hidden border-white/5 group relative aspect-[3/4]">
                 <img
-                  src={imgSrc} // Placeholder ki jagah imported image variable
+                  src={imgSrc} 
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-90 group-hover:opacity-100"
                   alt={`Wedding Set ${i + 1}`}
                 />
@@ -91,7 +94,7 @@ const WeddingSets = () => {
             </div>
             <div className="glass-panel !p-2 bg-white/10 rotate-1 hover:rotate-0 transition-transform duration-500 overflow-hidden">
                <img 
-                 src={img5} // Yahan bhi aapki apni image use ho rahi hai
+                 src={img7} 
                  className="rounded-[30px] w-full h-full object-cover"
                  alt="Cinematic Wedding"
                />

@@ -1,25 +1,25 @@
 import React, { useState } from 'react';
 import { Link } from "react-router-dom";
-import heroImage from "../assets/hero-img1.png"; 
+import heroImage from "../assets/prop1.png"; 
 import Navbar from '../components/Navbar';
 
-// --- APKI IMPORTED IMAGES ---
-import feature_studio from "../assets/wedding-feature.jpeg";
-import img1 from "../assets/Screenshot 2026-04-12 224745.png";
-import img2 from "../assets/Screenshot_20260413_014238.jpeg";
-import img3 from "../assets/Screenshot_20260413_014344.jpeg";
-import img4 from "../assets/Screenshot_20260413_014323.jpeg";
-import img5 from "../assets/Screenshot_20260413_014353.jpeg"; 
+// --- CLEANED IMPORTS (No Spaces) ---
+import feature_studio from "../assets/prop18.jpeg";
+import prop1 from "../assets/prop1.png";
+import prop2 from "../assets/prop2.png";
+import prop3 from "../assets/prop3.png";
+import prop4 from "../assets/prop4.jpeg";
+import prop5 from "../assets/prop15.jpeg"; 
 
 
 const Gallery = () => {
-  // Array mein img5 ko top par rakha hai
+  // Array mein prop5 ko top par rakha hai lambi image ke liye
   const myProjects = [
-    { id: 5, img: img5, title: "Editorial Vision", category: "Sets" }, // First vertical image
-    { id: 1, img: img1, title: "Fashion Campaign", category: "Fashion" },
-    { id: 2, img: img2, title: "Commercial Setup", category: "Commercial" },
-    { id: 3, img: img3, title: "Architectural Set", category: "Sets" },
-    { id: 4, img: img4, title: "Studio Production", category: "Commercial" },
+    { id: 5, img: prop5, title: "Editorial Vision", category: "Sets" }, 
+    { id: 1, img: prop1, title: "Fashion Campaign", category: "Fashion" },
+    { id: 2, img: prop2, title: "Commercial Setup", category: "Commercial" },
+    { id: 3, img: prop3, title: "Architectural Set", category: "Sets" },
+    { id: 4, img: prop4, title: "Studio Production", category: "Commercial" },
   ];
 
   return (
@@ -48,7 +48,7 @@ const Gallery = () => {
               <div
                 key={project.id}
                 className={`group relative overflow-hidden glass-panel !p-0 border-white/10 ${
-                  i === 0 ? 'row-span-2' : '' // Pehli image (img5) lambi show hogi
+                  i === 0 ? 'row-span-2' : '' // Pehli image (prop5) lambi show hogi
                 }`}
               >
                 <img
