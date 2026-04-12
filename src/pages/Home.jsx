@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
 
 const Home = () => {
-  const sets = Array(8).fill("https://images.unsplash.com/photo-1596443686812-2f45229eebc3?q=80&w=600");
-  const props = Array(10).fill("https://images.unsplash.com/photo-1618220179428-22790b461013?q=80&w=400");
+  const sets = Array(8).fill("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9NNcZX1ns24fpwEAUXM91swYKy2pJ9hMGpiVZyioigBmKBNa-mfSQAbzJ5ttkc5eZKSsIHGnKIvehHBqcWmvYogY&s&ec=121630540");
+  const props = Array(10).fill("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1qSOGzO_ICbC-XW5_rHIlG4n8tjc4Bdm99YBu0iuKkp_vqSu0C_wH4hGPYNhy_E7wUvOy4YH5VRs5DdptnTB5xcM&s&ec=121630540");
 
   return (
     <div className="bg-[#f6f1eb] text-[#2b2b2b] min-h-screen">
