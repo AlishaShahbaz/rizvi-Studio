@@ -1,117 +1,115 @@
 import React, { useState } from 'react';
-import { projects } from '../constants/data';
 import { Link } from "react-router-dom";
+import heroImage from "../assets/Screenshot 2026-04-12 224858.png"; 
+import Navbar from '../components/Navbar';
 
+// --- APKI IMPORTED IMAGES ---
+import feature_studio from "../assets/WhatsApp Image 2026-04-12 at 11.47.20 PM.jpeg";
+import img1 from "../assets/Screenshot 2026-04-12 224745.png";
+import img2 from "../assets/Screenshot_20260413_014238.jpeg";
+import img3 from "../assets/Screenshot_20260413_014344.jpeg";
+import img4 from "../assets/Screenshot_20260413_014323.jpeg";
+import img5 from "../assets/Screenshot_20260413_014353.jpeg"; // Ye lambi wali image
 
 const Gallery = () => {
-  const [filter, setFilter] = useState('All');
-
-  const categories = ['All', 'Fashion', 'Commercial', 'Sets'];
-
-  const filteredProjects =
-    filter === 'All'
-      ? projects
-      : projects.filter((p) => p.category === filter);
+  // Array mein img5 ko top par rakha hai
+  const myProjects = [
+    { id: 5, img: img5, title: "Editorial Vision", category: "Sets" }, // First vertical image
+    { id: 1, img: img1, title: "Fashion Campaign", category: "Fashion" },
+    { id: 2, img: img2, title: "Commercial Setup", category: "Commercial" },
+    { id: 3, img: img3, title: "Architectural Set", category: "Sets" },
+    { id: 4, img: img4, title: "Studio Production", category: "Commercial" },
+  ];
 
   return (
-    <div className="bg-[#f6f1eb] text-[#2b2b2b] min-h-screen pt-28 pb-20 px-6 md:px-16">
-
-      {/* HEADER */}
-      <div className="max-w-4xl mx-auto text-center mb-16">
-        <h2 className="text-5xl font-extrabold tracking-tight mb-4">
-          Selected Work
-        </h2>
-        <p className="text-black/60 text-lg">
-          A curated collection of fashion, commercial and set design projects.
-        </p>
-      </div>
-
-      {/* FILTER */}
-      <div className="flex justify-center gap-6 mb-16 flex-wrap">
-        {categories.map((cat) => (
-          <button
-            key={cat}
-            onClick={() => setFilter(cat)}
-            className={`text-sm uppercase tracking-widest pb-1 border-b transition ${
-              filter === cat
-                ? 'border-black text-black'
-                : 'border-transparent text-black/40 hover:text-black'
-            }`}
-          >
-            {cat}
-          </button>
-        ))}
-      </div>
-
-      {/* GRID */}
-    {/* GRID */}
-<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-[300px]">
-  {filteredProjects.map((project, i) => (
-    <div
-      key={project.id}
-      className={`group relative overflow-hidden rounded-2xl ${
-        i % 5 === 0 ? 'row-span-2' : ''
-      }`}
-    >
-      <img
-        src={project.img}
-        alt={project.title}
-        className="w-full h-full object-cover transition duration-700 group-hover:scale-105"
-      />
-
-      {/* OVERLAY */}
-      <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition duration-500 flex flex-col justify-end p-6">
-        <p className="text-xs text-[#d6a77a] uppercase tracking-widest mb-1">
-          {project.category}
-        </p>
-        <h3 className="text-white text-xl font-semibold">
-          {project.title}
-        </h3>
-      </div>
-    </div>
-  ))}
-</div>
-
-
-      {/* FEATURE SECTION */}
-      <section className="mt-32 grid md:grid-cols-2 gap-16 items-center">
+    <>
+      <Navbar />
+      <div className="relative min-h-screen w-full text-white font-sans selection:bg-hsq-peach selection:text-hsq-earth">
         
-        <div className="space-y-6">
-          <h2 className="text-4xl font-bold">
-            Built for Creative Freedom
-          </h2>
-          <p className="text-black/60 leading-relaxed">
-            Every project you see here is crafted inside our production ecosystem.
-            From lighting to props — everything is designed to elevate your vision.
-          </p>
-
-          <button className="border-b border-black text-sm uppercase tracking-widest">
-            Explore Sets
-          </button>
+        {/* 🖼️ FIXED BACKGROUND */}
+        <div className="fixed inset-0 -z-20">
+          <img src={heroImage} className="w-full h-full object-cover" alt="Background" />
+          <div className="absolute inset-0 brand-overlay"></div>
         </div>
 
-        <div className="rounded-[30px] overflow-hidden">
-          <img
-            src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=800"
-            className="w-full h-full object-cover"
-          />
-        </div>
-      </section>
+        <main className="relative z-10 p-4 md:p-10 max-w-[1600px] mx-auto pt-32 pb-20 space-y-20">
 
+          {/* BREADCRUMBS */}
+          <nav className="flex items-center gap-3 text-[10px] uppercase tracking-[0.4em] font-bold opacity-60 ml-4 mt-32 md:mt-40 mb-6">
+            <Link to="/" className="hover:text-hsq-peach transition-colors text-white">Home</Link>
+            <span className="text-white/20">/</span>
+            <span className="text-hsq-peach">Portfolio</span>
+          </nav>
 
-      {/* CTA */}
-      <section className="mt-32 text-center">
-        <h2 className="text-4xl font-bold mb-6">
-          Let’s Create Something Exceptional
-        </h2>
-        <Link to="/booking">
-        <button className="bg-black text-white px-10 py-4 rounded-full text-xs uppercase tracking-widest hover:bg-[#b07a6e] transition">
-          Book Your Shoot
-        </button>
-        </Link>
-      </section>
+          {/* --- PORTFOLIO GRID --- */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 auto-rows-[350px]">
+            {myProjects.map((project, i) => (
+              <div
+                key={project.id}
+                className={`group relative overflow-hidden glass-panel !p-0 border-white/10 ${
+                  i === 0 ? 'row-span-2' : '' // Pehli image (img5) lambi show hogi
+                }`}
+              >
+                <img
+                  src={project.img}
+                  alt={project.title}
+                  className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 opacity-80 group-hover:opacity-100"
+                />
 
-    </div>
+                {/* OVERLAY */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 flex flex-col justify-end p-8">
+                  <p className="text-[10px] text-hsq-peach uppercase tracking-[0.3em] font-bold mb-2">
+                    {project.category}
+                  </p>
+                  <h3 className="text-white text-2xl font-black uppercase tracking-tighter italic">
+                    {project.title}
+                  </h3>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* --- FEATURE SECTION --- */}
+          <section className="glass-panel p-8 md:p-16 grid md:grid-cols-2 gap-16 items-center">
+            <div className="space-y-8">
+              <h2 className="text-5xl font-black uppercase tracking-tighter leading-none">
+                Built for <br />
+                <span className="text-hsq-peach italic font-light">Creative Freedom</span>
+              </h2>
+              <p className="text-white/60 leading-relaxed font-light text-lg">
+                Every project is crafted inside our production ecosystem. 
+                From high-end lighting to architecture-grade props.
+              </p>
+              <Link to="/props">
+                <button className="bg-white text-hsq-earth px-10 py-4 rounded-full font-bold uppercase text-[10px] tracking-widest hover:bg-hsq-peach transition-all">
+                  Explore Props Library
+                </button>
+              </Link>
+            </div>
+
+            <div className="glass-panel !p-2 border-white/5 overflow-hidden rotate-2 group hover:rotate-0 transition-transform duration-700">
+              <img
+                src={feature_studio} 
+                className="w-full h-full object-cover rounded-[30px]"
+                alt="Studio Setup"
+              />
+            </div>
+          </section>
+
+          {/* CTA */}
+          <section className="glass-panel py-20 text-center space-y-8 border-hsq-peach/20 bg-hsq-peach/5">
+            <h2 className="text-5xl md:text-7xl font-black uppercase tracking-tighter">
+              Ready to <span className="italic font-thin">Create?</span>
+            </h2>
+            <Link to="/booking">
+              <button className="bg-hsq-peach text-hsq-earth px-14 py-5 rounded-full font-bold uppercase text-[11px] tracking-[0.2em] hover:scale-105 transition-all shadow-2xl">
+                Book Your Shoot Now
+              </button>
+            </Link>
+          </section>
+        </main>
+      </div>
+    </>
   );
 };
 

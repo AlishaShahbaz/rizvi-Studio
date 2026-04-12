@@ -1,191 +1,205 @@
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion"; // Optional: For smooth reveals
+import heroImage from "../assets/Screenshot 2026-04-12 224858.png";
+import img1 from "../assets/Screenshot 2026-04-12 224745.png";
+import img2 from "../assets/Screenshot_20260413_014238.jpeg";
+import img3 from "../assets/Screenshot_20260413_014344.jpeg";
+import img4 from "../assets/Screenshot_20260413_014323.jpeg";
+import studioVideo from "../assets/VID_20260412_133915_588.mp4"; // Aapki file ka sahi path
 
 const Home = () => {
-  const sets = Array(8).fill("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9NNcZX1ns24fpwEAUXM91swYKy2pJ9hMGpiVZyioigBmKBNa-mfSQAbzJ5ttkc5eZKSsIHGnKIvehHBqcWmvYogY&s&ec=121630540");
-  const props = Array(10).fill("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1qSOGzO_ICbC-XW5_rHIlG4n8tjc4Bdm99YBu0iuKkp_vqSu0C_wH4hGPYNhy_E7wUvOy4YH5VRs5DdptnTB5xcM&s&ec=121630540");
+    return (
+        <div className="relative min-h-screen w-full text-white font-sans selection:bg-hsq-peach selection:text-hsq-earth">
 
-  return (
-    <div className="bg-[#f6f1eb] text-[#2b2b2b] min-h-screen">
-
-      {/* HERO */}
-      <section className="pt-32 pb-24 px-6 md:px-16 grid lg:grid-cols-12 gap-12 items-center">
-        
-        {/* LEFT */}
-        <div className="lg:col-span-5 space-y-6">
-          <h1 className="text-6xl md:text-7xl font-extrabold leading-[0.9] tracking-tight">
-            100+ SETS <br/>
-            <span className="italic font-light text-[#b07a6e] text-5xl">at one place</span>
-          </h1>
-
-          <p className="text-lg text-black/60 max-w-md">
-            A premium production space designed for fashion shoots, ads, and creative storytelling.
-          </p>
-            <Link to="/booking">
-            <button className="bg-black text-white px-8 py-4 rounded-full text-xs tracking-widest uppercase hover:bg-[#b07a6e] transition">
-            Book Your Shoot
-          </button>
-            </Link>
-          
-        </div>
-
-        {/* RIGHT GRID */}
-        <div className="lg:col-span-7 grid grid-cols-2 md:grid-cols-4 gap-4">
-          {sets.map((img, i) => (
-            <div key={i} className="aspect-[3/4] rounded-2xl overflow-hidden">
-              <img src={img} className="w-full h-full object-cover hover:scale-105 transition duration-500" />
+            {/* 🖼️ STATIC BACKGROUND LAYER */}
+            <div className="fixed inset-0 -z-20">
+                <img
+                    src={heroImage}
+                    className="w-full h-full object-cover"
+                    alt="Studio Background"
+                />
+                <div className="absolute inset-0 brand-overlay"></div>
             </div>
-          ))}
+
+            {/* 🧊 MAIN CONTENT WRAPPER */}
+            <main className="relative z-10 p-4 md:p-10 max-w-[1600px] mx-auto space-y-12">
+
+                {/* --- HERO GLASS PANEL --- */}
+                <section className="glass-panel w-full min-h-[90vh] p-8 md:p-20 flex flex-col justify-between overflow-hidden">
+
+                    {/* NAV BAR */}
+                    <div className="flex justify-between items-center mb-12">
+                        <div className="text-3xl font-black tracking-tighter italic">
+                            Rizvi <span className="text-hsq-peach">Studio.</span>
+                        </div>
+                        <nav className="hidden lg:flex gap-10 text-[10px] font-bold uppercase tracking-[0.4em]">
+                            <Link to="/gallery" className="hover:text-hsq-peach transition-all">Portfolio</Link>
+                            <Link to="/wedding-sets" className="hover:text-hsq-peach transition-all">Wedding</Link>
+                            <Link to="/props" className="hover:text-hsq-peach transition-all">Props</Link>
+                            <Link to="/contact" className="hover:text-hsq-peach transition-all">Contact</Link>
+                        </nav>
+                    </div>
+
+                    {/* HERO CONTENT */}
+                    <div className="grid lg:grid-cols-12 gap-12 items-end">
+                        <div className="lg:col-span-8 space-y-6">
+                            <h1 className="text-7xl md:text-[140px] font-black leading-[0.75] tracking-tighter uppercase">
+                                CRAFTING <br />
+                                <span className="italic font-thin text-hsq-peach/90">VISIONS</span>
+                            </h1>
+                            <p className="text-xl text-white/70 max-w-xl font-light leading-relaxed">
+                                Lahore's premier destination for high-end TVCs, cinematic fashion shoots, and custom-built architectural sets.
+                            </p>
+                            <div className="flex gap-5 pt-4">
+                                <Link to="/booking">
+                                    <button className="bg-white text-hsq-earth px-12 py-5 rounded-full font-bold uppercase text-[11px] tracking-widest hover:bg-hsq-peach transition-all shadow-2xl active:scale-95">
+                                        Book Session
+                                    </button>
+                                </Link>
+                                <Link to="/gallery">
+                                    <button className="bg-[#413320] border-white/20 px-12 py-5 rounded-full font-bold uppercase text-[11px] tracking-widest hover:bg-white/10 transition-all">
+                                        Explore Sets
+                                    </button>
+                                </Link>
+                            </div>
+                        </div>
+
+                        {/* QUICK STATS (Upgrade) */}
+                        <div className="lg:col-span-4 grid grid-cols-2 gap-4">
+                            {[["100+", "Sets"], ["24/7", "Support"], ["15k", "Props"], ["10yr", "Exp"]].map(([val, label]) => (
+                                <div key={label} className="glass-panel p-6 border-white/5 bg-white/5 text-center">
+                                    <div className="text-2xl font-black text-hsq-peach">{val}</div>
+                                    <div className="text-[10px] uppercase tracking-widest opacity-40">{label}</div>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </section>
+
+                {/* --- FEATURED SERVICES (The Upgrade) --- */}
+                <section className="grid md:grid-cols-3 gap-6">
+                    <div className="glass-panel p-10 space-y-4 hover:bg-white/5 transition-all">
+                        <div className="w-12 h-12 rounded-full border border-hsq-peach/30 flex items-center justify-center mb-4 text-hsq-peach">01</div>
+                        <h3 className="text-2xl font-bold uppercase tracking-tighter italic">Custom Set Design</h3>
+                        <p className="text-sm text-white/50 leading-relaxed">Humein apne vision batayein, hamare art directors aapke liye zero se set khara karenge.</p>
+                    </div>
+
+                    <div className="glass-panel p-10 space-y-4 bg-hsq-peach/5 border-hsq-peach/20">
+                        <div className="w-12 h-12 rounded-full border border-hsq-peach flex items-center justify-center mb-4 text-hsq-peach">02</div>
+                        <h3 className="text-2xl font-bold uppercase tracking-tighter italic">Fashion Editorial</h3>
+                        <p className="text-sm text-white/50 leading-relaxed">High-end lighting rigs aur international standard backgrounds for premium brands.</p>
+                    </div>
+
+                    <div className="glass-panel p-10 space-y-4 hover:bg-white/5 transition-all">
+                        <div className="w-12 h-12 rounded-full border border-hsq-peach/30 flex items-center justify-center mb-4 text-hsq-peach">03</div>
+                        <h3 className="text-2xl font-bold uppercase tracking-tighter italic">Equipment Rental</h3>
+                        <p className="text-sm text-white/50 leading-relaxed">Latest Arri/Red setups aur industry-grade lights available on floor.</p>
+                    </div>
+                </section>
+
+                {/* --- 1. PORTFOLIO MASONRY PREVIEW --- */}
+                <section className="space-y-10">
+                    <div className="flex flex-col md:flex-row justify-between items-end gap-6 px-4">
+                        <div className="space-y-2">
+                            <h3 className="text-[10px] font-bold uppercase tracking-[0.4em] text-hsq-peach">Visual Archive</h3>
+                            <h2 className="text-5xl font-black uppercase tracking-tighter italic">Featured <span className="font-thin">Work</span></h2>
+                        </div>
+                        <Link to="/gallery" className="text-[10px] font-bold uppercase tracking-[0.3em] border-b border-hsq-peach pb-1 hover:text-hsq-peach transition-all">View All Projects</Link>
+                    </div>
+
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                        {[
+                            { id: 1, src: img1, label: "Editorial Shoot" },
+                            { id: 2, src: img2, label: "Fashion Campaign" },
+                            { id: 3, src: img3, label: "Product Set" },
+                            { id: 4, src: img4, label: "TVC Production" },
+                        ].map((item) => (
+                            <div key={item.id} className="glass-panel !p-0 aspect-[3/4] overflow-hidden group relative border-white/5">
+                                <img
+                                    src={item.src} // Ab har bar alag image load hogi
+                                    className="w-full h-full object-cover grayscale-0 group-hover:grayscale transition-all duration-700 group-hover:scale-110"
+                                    alt={item.label}
+                                />
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-all p-6 flex items-end">
+                                    <p className="text-[10px] uppercase tracking-widest font-bold text-hsq-peach">
+                                        {item.label} {/* Har image ka text bhi alag ho jayega */}
+                                    </p>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </section>
+
+                {/* --- 2. THE PROCESS (Quick Steps) --- */}
+                <section className="glass-panel p-10 md:p-20 bg-white/5 border-white/5">
+                    <div className="grid md:grid-cols-2 gap-16 items-center">
+                        <div className="space-y-8">
+                            <div className="space-y-2">
+                                <h3 className="text-[10px] font-bold uppercase tracking-[0.4em] text-hsq-peach">Our Workflow</h3>
+                                <h2 className="text-5xl font-black uppercase tracking-tighter italic leading-tight">From Concept <br /> to <span className="font-thin">Reality</span></h2>
+                            </div>
+                            <div className="space-y-6">
+                                {[
+                                    { step: "01", t: "Briefing", d: "Humein apne requirements batayein." },
+                                    { step: "02", t: "Set Building", d: "Hamari team physical construction shuru karti hai." },
+                                    { step: "03", t: "Production", d: "Professional lights aur sets ke sath shoot karein." }
+                                ].map(item => (
+                                    <div key={item.step} className="flex gap-6 items-start">
+                                        <span className="text-hsq-peach font-black italic text-xl">{item.step}</span>
+                                        <div>
+                                            <h4 className="font-bold uppercase tracking-widest text-sm">{item.t}</h4>
+                                            <p className="text-xs text-white/40">{item.d}</p>
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                        <div className="relative aspect-video rounded-[40px] overflow-hidden glass-panel !p-0 border-white/20 group cursor-pointer">
+                            <motion.video
+                                src={studioVideo}
+                                autoPlay
+                                muted
+                                loop
+                                playsInline
+                                whileHover={{
+                                    scale: 1.1,
+                                    rotate: 2, // Tilt effect
+                                    transition: { duration: 0.5 }
+                                }}
+                                className="w-full h-full object-cover opacity-60"
+                            />
+
+                            {/* Baki overlay code wese hi rahega */}
+                        </div>
+                    </div>
+                </section>
+
+                {/* --- 3. TRUSTED BY (Client Logos) --- */}
+                <section className="py-10 border-y border-white/5">
+                    <p className="text-[9px] uppercase tracking-[0.5em] text-center mb-10 opacity-40 font-bold">Partners in Excellence</p>
+                    <div className="flex flex-wrap justify-center items-center gap-12 md:gap-24 opacity-30 grayscale hover:grayscale-0 transition-all">
+                        {/* Replace with actual brand names/logos */}
+                        <span className="text-2xl font-black tracking-tighter italic">NISHAT</span>
+                        <span className="text-2xl font-black tracking-tighter italic">KHAADI</span>
+                        <span className="text-2xl font-black tracking-tighter italic">SAPPHIRE</span>
+                        <span className="text-2xl font-black tracking-tighter italic">SANA SAFINAZ</span>
+                    </div>
+                </section>
+
+                {/* --- FOOTER --- */}
+                <footer className="glass-panel p-8 flex flex-col md:flex-row justify-between items-center gap-6">
+                    <p className="text-[11px] uppercase tracking-[0.4em] opacity-40">Shadab, Lahore, Pakistan</p>
+                    <div className="flex gap-8">
+                        {['Instagram', 'WhatsApp', 'LinkedIn'].map(social => (
+                            <a key={social} href="#" className="text-[11px] uppercase tracking-widest hover:text-hsq-peach transition-all">{social}</a>
+                        ))}
+                    </div>
+                    <p className="text-[11px] uppercase tracking-[0.4em] opacity-40">© 2026 Rizvi Studio</p>
+                </footer>
+
+            </main>
         </div>
-      </section>
-
-
-      {/* SHOOT ANYTHING SECTION */}
-      <section className="py-24 px-6 md:px-16 border-t border-black/10">
-        <div className="grid md:grid-cols-2 gap-16 items-center">
-
-          <div className="grid grid-cols-2 gap-4">
-            {sets.slice(0,4).map((img, i) => (
-              <div key={i} className="aspect-square rounded-xl overflow-hidden">
-                <img src={img} className="w-full h-full object-cover" />
-              </div>
-            ))}
-          </div>
-
-          <div className="space-y-6">
-            <h2 className="text-4xl font-bold">Shoot Anything Here</h2>
-            <p className="text-black/60 leading-relaxed">
-              From luxury interiors to vibrant themed sets — everything is ready. 
-              No setup stress, no production delays. Just walk in and create.
-            </p>
-
-            <button className="border-b border-black text-sm uppercase tracking-widest">
-              Explore Sets
-            </button>
-          </div>
-        </div>
-      </section>
-
-
-      {/* SPLIT STORY SECTION */}
-      <section className="py-24 px-6 md:px-16 bg-[#efe7de]">
-        <div className="grid md:grid-cols-2 gap-16 items-center">
-
-          <div className="space-y-6">
-            <h2 className="text-4xl font-bold">Transparent & Hassle Free</h2>
-            <p className="text-black/60">
-              Book your set instantly with clear pricing. No hidden costs, 
-              no complicated approvals — everything streamlined for creators.
-            </p>
-
-            <button className="bg-black text-white px-6 py-3 rounded-full text-xs uppercase tracking-widest">
-              Check Pricing
-            </button>
-          </div>
-
-          <div className="rounded-[30px] overflow-hidden">
-            <img 
-              src="https://images.unsplash.com/photo-1616046229478-9901c5536a45?q=80&w=800" 
-              className="w-full h-full object-cover"
-            />
-          </div>
-
-        </div>
-      </section>
-
-
-      {/* PROP LIBRARY */}
-      <section className="py-24 px-6 md:px-16">
-        <h3 className="text-center text-xs tracking-[0.4em] uppercase text-[#b07a6e] mb-4">
-          Catalogue
-        </h3>
-
-        <h2 className="text-center text-4xl font-bold mb-16">
-          Prop Library
-        </h2>
-
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-6">
-          {props.map((img, i) => (
-            <div key={i} className="group">
-              <div className="aspect-square rounded-2xl overflow-hidden mb-3">
-                <img src={img} className="w-full h-full object-cover group-hover:scale-110 transition duration-500" />
-              </div>
-
-              <p className="text-sm font-medium">Vintage Chair</p>
-              <p className="text-xs text-black/50">Antique</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-
-      {/* CTA STRIP */}
-      <section className="py-20 text-center bg-black text-white">
-        <h2 className="text-4xl font-bold mb-6">
-          Ready to Create?
-        </h2>
-        <button className="border border-white px-8 py-3 rounded-full text-xs uppercase tracking-widest hover:bg-white hover:text-black transition">
-          Book Now
-        </button>
-      </section>
-
-
-      {/* FOOTER */}
-      <footer className="bg-[rgb(246,241,235)] py-16 px-6 md:px-16 text-[rgb(80,64,39)] text-sm">
-
-  <div className="grid md:grid-cols-3 gap-12">
-
-    {/* BRAND */}
-    <div>
-      <h2 className="text-2xl font-extrabold mb-3 tracking-tight">
-        ABC PROD.
-      </h2>
-      <p className="text-black/60 leading-relaxed">
-        Premium production spaces built for creators, photographers,
-        filmmakers and brands.
-      </p>
-    </div>
-
-    {/* CONTACT */}
-    <div className="space-y-2 text-black/70">
-      <h3 className="font-semibold text-[rgb(80,64,39)] mb-2">
-        Contact
-      </h3>
-      <p>Gulberg III, Lahore</p>
-      <p>+92 300 1234567</p>
-      <p>info@abcproductions.com</p>
-    </div>
-
-    {/* SOCIAL */}
-    <div className="space-y-2 text-black/70">
-      <h3 className="font-semibold text-[rgb(80,64,39)] mb-2">
-        Connect
-      </h3>
-
-      <p className="cursor-pointer hover:underline">
-        Instagram
-      </p>
-      <p className="cursor-pointer hover:underline">
-        WhatsApp
-      </p>
-      <p className="cursor-pointer hover:underline">
-        Portfolio
-      </p>
-    </div>
-
-  </div>
-
-  {/* BOTTOM BAR */}
-  <div className="mt-12 pt-6 border-t border-black/10 flex flex-col md:flex-row justify-between gap-4 text-black/50 text-xs">
-
-    <p>© {new Date().getFullYear()} ABC Productions. All rights reserved.</p>
-
-    <p>Designed for creative studios & production houses</p>
-
-  </div>
-
-</footer>
-    </div>
-  );
+    );
 };
 
 export default Home;

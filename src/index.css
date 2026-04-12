@@ -3,17 +3,41 @@
 @theme {
   --color-hsq-cream: #FBEED2;
   --color-hsq-rose: #AA817E;
-  --color-hsq-peach: #FCCEAB;
+  --color-hsq-peach: #A19D70;
   --color-hsq-sage: #A19D70;
   --color-hsq-earth: #504027;
 }
 
-:root {
-  background-color: #FBEED2 !important;
-  color: #504027;
+/* ✅ ENHANCED WHITE-TEXT GLASS PANEL */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.05); 
+  backdrop-filter: blur(40px) saturate(160%);
+  -webkit-backdrop-filter: blur(40px) saturate(160%);
+  border: 1px solid rgba(255, 255, 255, 0.15); /* Pure white thin border */
+  border-radius: 40px;
 }
 
-body {
-  margin: 0;
-  background-color: #FBEED2 !important;
+.brand-overlay {
+  background: linear-gradient(
+    135deg,
+    rgba(30, 25, 20, 0.7) 0%,   /* Thora mazeed dark for white text clarity */
+    rgba(170, 129, 126, 0.4) 100%
+  );
+}
+/* ✅ IMPROVED GLASS FOR BETTER TEXT VISIBILITY */
+.glass-panel {
+  background: rgba(0, 0, 0, 0.25); /* Thora dark tint taaki white text nazar aaye */
+  backdrop-filter: blur(25px) saturate(180%);
+  -webkit-backdrop-filter: blur(25px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.1); 
+  border-radius: 40px;
+}
+
+/* Text readable banane ke liye overlay thora dark */
+.brand-overlay {
+  background: linear-gradient(
+    to bottom right,
+    rgba(0, 0, 0, 0.6) 0%, 
+    rgba(80, 64, 39, 0.4) 100%
+  );
 }

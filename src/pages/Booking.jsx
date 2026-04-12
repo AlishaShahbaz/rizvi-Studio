@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import Navbar from "../components/Navbar";
+import heroImage from "../assets/Screenshot 2026-04-12 224858.png"; 
 
 const Booking = () => {
   const [formData, setFormData] = useState({
@@ -23,145 +25,134 @@ const Booking = () => {
   const handleWhatsAppRedirect = (e) => {
     e.preventDefault();
 
-    // ✅ validation
     if (!formData.name || !formData.date || !formData.message) {
       alert("Please fill all required fields!");
       return;
     }
 
-    const phoneNumber = "923001234567";
+    const phoneNumber = "923001234567"; // Apna number yahan add karein
 
     const text =
-      `🎬 *New Booking Request - HSQ Productions*%0A%0A` +
+      `🎬 *New Booking Request - RIZVI STUDIO*%0A%0A` +
       `👤 Name: ${formData.name}%0A` +
       `🎯 Service: ${formData.service}%0A` +
       `📅 Date: ${formatDate(formData.date)}%0A` +
       `📝 Details:%0A${formData.message}%0A%0A` +
       `---%0A` +
-      `Sent via HSQ Website`;
+      `Sent via Portfolio Website`;
 
     window.open(
       `https://wa.me/${phoneNumber}?text=${encodeURIComponent(text)}`,
       "_blank"
     );
 
-    // ✅ success message
     setSuccess(true);
     setTimeout(() => setSuccess(false), 3000);
   };
 
   return (
-    <div
-      className="min-h-screen pt-28 pb-20 px-6 md:px-16 flex items-center justify-center"
-      style={{ backgroundColor: "rgb(246,241,235)" }}
-    >
-      {/* CARD */}
-      <div
-        className="w-full max-w-2xl rounded-[30px] p-10 md:p-14 space-y-8 shadow-sm border"
-        style={{
-          backgroundColor: "rgb(239,231,222)",
-          borderColor: "rgba(80,64,39,0.1)",
-        }}
-      >
-        {/* HEADER */}
-        <div className="text-center space-y-3">
-          <h2
-            className="text-4xl md:text-5xl font-extrabold tracking-tight"
-            style={{ color: "rgb(80,64,39)" }}
-          >
-            Book Your Shoot
-          </h2>
-
-          <p style={{ color: "rgba(80,64,39,0.6)" }}>
-            Fill the details below and we’ll connect you on WhatsApp.
-          </p>
+    <>
+      <Navbar />
+      <div className="relative min-h-screen w-full text-white font-sans selection:bg-hsq-peach selection:text-hsq-earth">
+        
+        {/* 🖼️ FIXED BACKGROUND (Consistency with other pages) */}
+        <div className="fixed inset-0 -z-20">
+          <img 
+            src={heroImage}
+            className="w-full h-full object-cover" 
+            alt="Background"
+          />
+          <div className="absolute inset-0 brand-overlay"></div>
         </div>
 
-        {/* FORM */}
-        <form onSubmit={handleWhatsAppRedirect} className="space-y-5">
+        <main className="relative z-10 flex items-center justify-center pt-40 pb-20 px-6">
+          
+          {/* --- GLASS FORM CARD --- */}
+          <div className="w-full max-w-2xl glass-panel p-8 md:p-16 space-y-10 border-white/10 backdrop-blur-2xl">
+            
+            {/* HEADER */}
+            <div className="text-center space-y-4">
+              <h2 className="text-5xl md:text-6xl font-black uppercase tracking-tighter leading-none">
+                Reserve Your <br />
+                <span className="text-hsq-peach italic font-thin">Session</span>
+              </h2>
+              <p className="text-white/50 text-sm uppercase tracking-[0.2em] font-bold">
+                Connect with us instantly via WhatsApp
+              </p>
+            </div>
 
-          {/* NAME */}
-          <input
-            type="text"
-            required
-            placeholder="Your Name"
-            className="w-full p-4 rounded-xl bg-transparent border outline-none transition"
-            style={{
-              borderColor: "rgba(80,64,39,0.2)",
-              color: "rgb(80,64,39)",
-            }}
-            onChange={(e) =>
-              setFormData({ ...formData, name: e.target.value })
-            }
-          />
+            {/* FORM */}
+            <form onSubmit={handleWhatsAppRedirect} className="space-y-6">
 
-          {/* SERVICE */}
-          <select
-            className="w-full p-4 rounded-xl bg-transparent border outline-none transition"
-            style={{
-              borderColor: "rgba(80,64,39,0.2)",
-              color: "rgb(80,64,39)",
-            }}
-            onChange={(e) =>
-              setFormData({ ...formData, service: e.target.value })
-            }
-          >
-            <option>Fashion Shoot</option>
-            <option>Commercial TVC</option>
-            <option>Studio Rental</option>
-            <option>Post Production</option>
-          </select>
+              {/* NAME */}
+              <div className="space-y-2">
+                <label className="text-[10px] uppercase tracking-widest font-bold text-hsq-peach ml-1">Full Name</label>
+                <input
+                  type="text"
+                  required
+                  placeholder="Enter your name"
+                  className="w-full p-5 rounded-2xl bg-white/5 border border-white/10 outline-none focus:border-hsq-peach/50 transition-all text-white placeholder:text-white/20"
+                  onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                />
+              </div>
 
-          {/* DATE */}
-          <input
-            type="date"
-            required
-            className="w-full p-4 rounded-xl bg-transparent border outline-none transition"
-            style={{
-              borderColor: "rgba(80,64,39,0.2)",
-              color: "rgb(80,64,39)",
-            }}
-            onChange={(e) =>
-              setFormData({ ...formData, date: e.target.value })
-            }
-          />
+              <div className="grid md:grid-cols-2 gap-6">
+                {/* SERVICE */}
+                <div className="space-y-2">
+                  <label className="text-[10px] uppercase tracking-widest font-bold text-hsq-peach ml-1">Service Type</label>
+                  <select
+                    className="w-full p-5 rounded-2xl bg-[#1a1a1a] border border-white/10 outline-none focus:border-hsq-peach/50 transition-all text-white appearance-none"
+                    onChange={(e) => setFormData({ ...formData, service: e.target.value })}
+                  >
+                    <option className="bg-black">Fashion Shoot</option>
+                    <option className="bg-black">Commercial TVC</option>
+                    <option className="bg-black">Studio Rental</option>
+                    <option className="bg-black">Post Production</option>
+                  </select>
+                </div>
 
-          {/* MESSAGE */}
-          <textarea
-            rows="5"
-            placeholder="Tell us about your project..."
-            className="w-full p-4 rounded-xl bg-transparent border outline-none transition"
-            style={{
-              borderColor: "rgba(80,64,39,0.2)",
-              color: "rgb(80,64,39)",
-            }}
-            onChange={(e) =>
-              setFormData({ ...formData, message: e.target.value })
-            }
-          />
+                {/* DATE */}
+                <div className="space-y-2">
+                  <label className="text-[10px] uppercase tracking-widest font-bold text-hsq-peach ml-1">Preferred Date</label>
+                  <input
+                    type="date"
+                    required
+                    className="w-full p-5 rounded-2xl bg-white/5 border border-white/10 outline-none focus:border-hsq-peach/50 transition-all text-white custom-calendar-icon"
+                    onChange={(e) => setFormData({ ...formData, date: e.target.value })}
+                  />
+                </div>
+              </div>
 
-          {/* BUTTON */}
-          <button
-            type="submit"
-            className="w-full py-4 rounded-full text-xs uppercase tracking-widest transition"
-            style={{
-              backgroundColor: "rgb(246,241,235)",
-              color: "rgb(80,64,39)",
-            }}
-          >
-            Send on WhatsApp
-          </button>
+              {/* MESSAGE */}
+              <div className="space-y-2">
+                <label className="text-[10px] uppercase tracking-widest font-bold text-hsq-peach ml-1">Project Details</label>
+                <textarea
+                  rows="4"
+                  placeholder="Tell us about your creative vision..."
+                  className="w-full p-5 rounded-2xl bg-white/5 border border-white/10 outline-none focus:border-hsq-peach/50 transition-all text-white placeholder:text-white/20 resize-none"
+                  onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                />
+              </div>
 
-          {/* SUCCESS MESSAGE */}
-          {success && (
-            <p style={{ color: "green", marginTop: "10px" }}>
-              Booking sent successfully!
-            </p>
-          )}
+              {/* BUTTON */}
+              <button
+                type="submit"
+                className="w-full py-6 rounded-full bg-hsq-peach text-hsq-earth font-black uppercase text-xs tracking-[0.3em] hover:scale-[1.02] active:scale-95 transition-all shadow-[0_20px_50px_rgba(252,206,171,0.2)]"
+              >
+                Send Request via WhatsApp
+              </button>
 
-        </form>
+              {/* SUCCESS MESSAGE */}
+              {success && (
+                <p className="text-center text-hsq-peach text-xs font-bold uppercase tracking-widest animate-pulse">
+                  Redirecting to WhatsApp...
+                </p>
+              )}
+            </form>
+          </div>
+        </main>
       </div>
-    </div>
+    </>
   );
 };
 

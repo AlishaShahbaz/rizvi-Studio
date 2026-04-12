@@ -1,107 +1,130 @@
 import { Link } from "react-router-dom";
+import heroImage from "../assets/Screenshot 2026-04-12 224858.png";
+import Navbar from "../components/Navbar"; 
+
+// --- APKI IMPORTED IMAGES ---
+import img1 from "../assets/Screenshot 2026-04-12 224745.png";
+import img2 from "../assets/Screenshot_20260413_014238.jpeg";
+import img3 from "../assets/Screenshot_20260413_014344.jpeg";
+import img4 from "../assets/Screenshot_20260413_014323.jpeg";
+import img5 from "../assets/Screenshot_20260413_014353.jpeg"; 
+import img6 from "../assets/Screenshot_20260413_0143441.jpeg"; 
+import img7 from "../assets/WhatsApp Image 2026-04.jpeg"; 
+import img8 from "../assets/Screenshot_20260413_01425.jpeg"; 
+import img9 from "../assets/Screenshot_20260413_014251.jpeg"; 
+import img10 from "../assets/Screenshot_20260413_015245.jpeg";
+
 const Props = () => {
-  const items = Array(10).fill(
-    "https://images.unsplash.com/photo-1618220179428-22790b461013?q=80&w=400"
-  );
+    // Sab images ko ek array mein arrange kiya hai
+    const propItems = [
+        { src: img1, name: "Luxury Setup", cat: "Studio Tools" },
+        { src: img2, name: "Vintage Piece", cat: "Antique Collection" },
+        { src: img3, name: "Modern Prop", cat: "Creative Objects" },
+        { src: img4, name: "Minimal Accent", cat: "Studio Tools" },
+        { src: img5, name: "Texture Backdrop", cat: "Textured Backdrops" },
+        { src: img6, name: "Production Gear", cat: "Studio Tools" },
+        { src: img7, name: "Aesthetic Object", cat: "Creative Objects" },
+        { src: img8, name: "Premium Chair", cat: "Luxury Items" },
+        { src: img9, name: "Art Deco", cat: "Vintage Props" },
+        { src: img10, name: "Grand Asset", cat: "Luxury Items" },
+    ];
 
-  return (
-    <div className="bg-[#f6f1eb] pt-28 pb-20 px-6 md:px-16">
+    return (
+        <>
+        <Navbar/>
+        <div className="relative min-h-screen w-full text-white font-sans selection:bg-hsq-peach selection:text-hsq-earth">
 
-      {/* HERO */}
-      <div className="max-w-4xl mb-16">
-        <h1 className="text-5xl font-extrabold mb-4">
-          Prop Library
-        </h1>
-        <p className="text-black/60 text-lg leading-relaxed">
-          A curated collection of creative props designed to enhance
-          photography, film and commercial productions.
-        </p>
-      </div>
-
-      {/* HOW IT WORKS (NEW STYLE SECTION) */}
-      <div className="flex flex-col md:flex-row gap-6 mb-16">
-
-        <div className="flex-1 bg-[#efe7de] p-6 rounded-2xl border border-black/10">
-          <span className="text-sm font-bold">Step 1</span>
-          <h3 className="font-bold text-xl mt-2">Browse Props</h3>
-          <p className="text-black/60 text-sm mt-1">
-            Explore our categorized prop library.
-          </p>
-        </div>
-
-        <div className="flex-1 bg-[#efe7de] p-6 rounded-2xl border border-black/10">
-          <span className="text-sm font-bold">Step 2</span>
-          <h3 className="font-bold text-xl mt-2">Select Items</h3>
-          <p className="text-black/60 text-sm mt-1">
-            Choose props that match your shoot theme.
-          </p>
-        </div>
-
-        <div className="flex-1 bg-[#efe7de] p-6 rounded-2xl border border-black/10">
-          <span className="text-sm font-bold">Step 3</span>
-          <h3 className="font-bold text-xl mt-2">Use in Shoot</h3>
-          <p className="text-black/60 text-sm mt-1">
-            Integrate props into your production seamlessly.
-          </p>
-        </div>
-      </div>
-
-      {/* CATEGORY HIGHLIGHTS (DIFFERENT STYLE SECTION) */}
-      <div className="mb-16">
-        <h2 className="text-2xl font-bold mb-6">
-          Popular Categories
-        </h2>
-
-        <div className="flex gap-4 overflow-x-auto pb-2">
-          <div className="min-w-[200px] bg-[#efe7de] p-4 rounded-2xl border border-black/10">
-            Vintage Props
-          </div>
-          <div className="min-w-[200px] bg-[#efe7de] p-4 rounded-2xl border border-black/10">
-            Luxury Items
-          </div>
-          <div className="min-w-[200px] bg-[#efe7de] p-4 rounded-2xl border border-black/10">
-            Studio Accessories
-          </div>
-          <div className="min-w-[200px] bg-[#efe7de] p-4 rounded-2xl border border-black/10">
-            Creative Objects
-          </div>
-        </div>
-      </div>
-
-      {/* GRID */}
-      <div className="grid grid-cols-2 md:grid-cols-5 gap-6">
-        {items.map((img, i) => (
-          <div key={i} className="group">
-            <div className="aspect-square rounded-2xl overflow-hidden mb-3">
-              <img
-                src={img}
-                className="w-full h-full object-cover group-hover:scale-110 transition duration-500"
-              />
+            {/* 🖼️ FIXED BACKGROUND */}
+            <div className="fixed inset-0 -z-20">
+                <img
+                    src={heroImage}
+                    className="w-full h-full object-cover"
+                    alt="Prop Library Background"
+                />
+                <div className="absolute inset-0 brand-overlay"></div>
             </div>
-            <p className="text-sm font-medium">Vintage Item</p>
-            <p className="text-xs text-black/50">Antique</p>
-          </div>
-        ))}
-      </div>
 
-      {/* CTA */}
-      <div className="text-center mt-20">
-        <h3 className="text-2xl font-bold mb-4">
-          Need props for your next shoot?
-        </h3>
-        <p className="text-black/60 mb-6">
-          Browse our library and reserve items instantly.
-        </p>
-        <Link to="/booking">
-        
-        <button className="bg-black text-white px-10 py-4 rounded-full text-xs uppercase tracking-widest hover:opacity-80 transition">
-          Book Props
-        </button>
-        </Link>
-      </div>
+            <main className="relative z-10 p-4 md:p-10 max-w-[1600px] mx-auto pt-32 pb-20 space-y-12">
+                
+                {/* BREADCRUMBS */}
+                <nav className="flex items-center gap-3 text-[10px] uppercase tracking-[0.4em] font-bold opacity-60 ml-4 mt-32 md:mt-40 mb-6">
+                    <Link to="/" className="hover:text-hsq-peach transition-colors text-white">Home</Link>
+                    <span className="text-white/20">/</span>
+                    <span className="text-hsq-peach">PROP LIBRARY</span>
+                </nav>
 
-    </div>
-  );
+                {/* --- PROCESS STEPS --- */}
+                <div className="grid md:grid-cols-3 gap-6">
+                    {[
+                        { step: "01", title: "Browse", desc: "Explore our categorized digital catalog." },
+                        { step: "02", title: "Select", desc: "Choose items that match your creative theme." },
+                        { step: "03", title: "Create", desc: "Integrate assets into your set seamlessly." }
+                    ].map((item, i) => (
+                        <div key={i} className="glass-panel p-8 bg-white/5 border-white/10 hover:bg-white/10 transition-all">
+                            <span className="text-hsq-peach font-black text-sm tracking-widest uppercase italic">{item.step} — Process</span>
+                            <h3 className="font-bold text-2xl mt-2 tracking-tighter uppercase italic">{item.title}</h3>
+                            <p className="text-white/50 text-sm mt-2 font-light">{item.desc}</p>
+                        </div>
+                    ))}
+                </div>
+
+                {/* --- CATEGORIES --- */}
+                <section className="space-y-6">
+                    <h2 className="text-[10px] font-bold uppercase tracking-[0.4em] text-white/40 ml-2">Popular Categories</h2>
+                    <div className="flex gap-4 overflow-x-auto pb-4 no-scrollbar">
+                        {["Vintage Props", "Luxury Items", "Studio Tools", "Creative Objects", "Textured Backdrops"].map((cat) => (
+                            <div key={cat} className="min-w-[220px] glass-panel !p-5 !rounded-full text-center text-[10px] font-bold uppercase tracking-widest border-white/10 hover:border-hsq-peach/50 cursor-pointer transition-all bg-white/5">
+                                {cat}
+                            </div>
+                        ))}
+                    </div>
+                </section>
+
+                {/* --- PROP GRID (Using your imported images) --- */}
+                <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-6">
+                    {propItems.map((item, i) => (
+                        <div key={i} className="group cursor-pointer">
+                            <div className="glass-panel !p-0 aspect-square overflow-hidden mb-4 border-white/5 relative">
+                                <img
+                                    src={item.src} // Imported image use ho rahi hai
+                                    className="w-full h-full object-cover group-hover:scale-110 transition duration-1000 opacity-80 group-hover:opacity-100"
+                                    alt={item.name}
+                                />
+                                <div className="absolute inset-0 bg-hsq-peach/10 opacity-0 group-hover:opacity-100 transition-opacity" />
+                            </div>
+                            <div className="px-2 space-y-1">
+                                <p className="text-xs font-bold uppercase tracking-widest group-hover:text-hsq-peach transition-colors">
+                                    {item.name}
+                                </p>
+                                <p className="text-[10px] text-white/40 uppercase tracking-widest italic font-bold">
+                                    {item.cat}
+                                </p>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+
+                {/* --- UPGRADED CTA --- */}
+                <section className="glass-panel py-20 text-center space-y-8 bg-white/5 border-white/5">
+                    <div className="space-y-4">
+                        <h3 className="text-4xl md:text-5xl font-black uppercase tracking-tighter leading-none">
+                            Need specific <span className="italic font-thin text-hsq-peach">Assets?</span>
+                        </h3>
+                        <p className="text-white/50 font-light max-w-md mx-auto">
+                            Our library is constantly growing. Reserve items for your next big campaign instantly.
+                        </p>
+                    </div>
+                    <Link to="/booking">
+                        <button className="bg-white text-hsq-earth px-14 py-5 rounded-full font-bold uppercase text-[11px] tracking-[0.2em] hover:bg-hsq-peach transition-all shadow-2xl">
+                            Book Props Now
+                        </button>
+                    </Link>
+                </section>
+
+            </main>
+        </div>
+        </>
+    );
 };
 
 export default Props;
