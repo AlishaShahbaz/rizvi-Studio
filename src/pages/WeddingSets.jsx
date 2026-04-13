@@ -1,15 +1,15 @@
 import { Link } from "react-router-dom";
-import heroImage from "../assets/prop1.png"; // Updated as per your list
+import heroImage from "../assets/prop10.jpeg"; // Updated as per your list
 import Navbar from "../components/Navbar"; 
 
 // --- CLEANED IMPORTS (prop1 to prop18 format) ---
-import img1 from "../assets/prop1.png";
-import img2 from "../assets/prop2.png";
+import img1 from "../assets/prop1.jpeg";
+import img2 from "../assets/prop2.jpeg";
 import img3 from "../assets/prop8.jpeg";
 import img4 from "../assets/prop5.jpeg";
 import img5 from "../assets/prop11.jpeg";
-import img6 from "../assets/prop15.jpeg"; 
-import img7 from "../assets/prop13.jpeg"; 
+import img6 from "../assets/prop3.jpeg"; 
+import img7 from "../assets/prop4.jpeg"; 
 
 
 const WeddingSets = () => {

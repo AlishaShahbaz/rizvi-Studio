@@ -1,13 +1,13 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import heroImage from "../assets/prop1.png";
-import heroVideo from "../assets/hero-video.mp4"; // Video import updated
+import heroImage from "../assets/prop10.jpeg";
+import heroVideo from "../assets/Hero-Vid.mp4"; // Video import updated
 
 // --- IMAGES IMPORT (prop1 to prop18) ---
-import prop1 from "../assets/prop2.png";
+import prop1 from "../assets/prop2.jpeg";
 import prop2 from "../assets/prop8.jpeg";
 import prop3 from "../assets/prop5.jpeg";
-import prop4 from "../assets/prop14.jpeg";
+import prop4 from "../assets/prop9.jpeg";
 // Note: Agar aapne prop5-prop18 use karni hain to wo bhi aise hi import hongi
 
 const Home = () => {

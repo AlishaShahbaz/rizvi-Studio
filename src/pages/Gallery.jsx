@@ -1,15 +1,15 @@
 import React, { useState } from 'react';
 import { Link } from "react-router-dom";
-import heroImage from "../assets/prop1.png"; 
+import heroImage from "../assets/prop10.jpeg"; 
 import Navbar from '../components/Navbar';
 
 // --- CLEANED IMPORTS (No Spaces) ---
-import feature_studio from "../assets/prop18.jpeg";
-import prop1 from "../assets/prop1.png";
-import prop2 from "../assets/prop2.png";
-import prop3 from "../assets/prop3.png";
+import feature_studio from "../assets/prop6.jpeg";
+import prop1 from "../assets/prop1.jpeg";
+import prop2 from "../assets/prop2.jpeg";
+import prop3 from "../assets/prop3.jpeg";
 import prop4 from "../assets/prop4.jpeg";
-import prop5 from "../assets/prop15.jpeg"; 
+import prop5 from "../assets/prop5.jpeg"; 
 
 
 const Gallery = () => {

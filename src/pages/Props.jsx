@@ -2,10 +2,10 @@ import { Link } from "react-router-dom";
 import Navbar from "../components/Navbar"; 
 
 // --- CLEAN & RENAMED IMPORTS (prop1 to prop18 format) ---
-import propHeroBG from "../assets/prop1.png"; // Hero/Background setup
-import prop1 from "../assets/prop1.png";
-import prop2 from "../assets/prop2.png";
-import prop3 from "../assets/prop3.png";
+import propHeroBG from "../assets/prop10.jpeg"; // Hero/Background setup
+import prop1 from "../assets/prop1.jpeg";
+import prop2 from "../assets/prop2.jpeg";
+import prop3 from "../assets/prop3.jpeg";
 import prop4 from "../assets/prop4.jpeg";
 import prop5 from "../assets/prop5.jpeg"; 
 import prop6 from "../assets/prop6.jpeg"; 

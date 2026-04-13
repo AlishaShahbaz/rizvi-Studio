@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Navbar from "../components/Navbar";
-import heroImage from "../assets/prop1.png"; 
+import heroImage from "../assets/prop10.jpeg"; 
 
 const Booking = () => {
   const [formData, setFormData] = useState({
