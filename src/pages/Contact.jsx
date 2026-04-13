@@ -73,7 +73,7 @@ const Contact = () => {
                             <div className="space-y-2">
                                 <h3 className="text-[10px] font-black uppercase tracking-[0.4em] text-hsq-peach/60">Direct Line</h3>
                                 <p className="text-2xl font-bold tracking-tighter italic uppercase">+92 300 1234567</p>
-                                <p className="text-white/60 font-light">hello@rizvistudio.com</p>
+                                <p className="text-white/60 font-light">hello@FtProduction.com</p>
                             </div>
 
                             <div className="space-y-4 pt-4 border-t border-white/10">
@@ -96,7 +96,7 @@ const Contact = () => {
 
                 <footer className="text-center pt-20 opacity-30">
                     <p className="text-[9px] uppercase tracking-[0.6em] font-bold">
-                        Elevating Content Creation • Rizvi Studio
+                        Elevating Content Creation • Ft Production
                     </p>
                 </footer>
             </main>

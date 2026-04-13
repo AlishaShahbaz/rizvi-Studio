@@ -33,7 +33,7 @@ const Booking = () => {
     const phoneNumber = "923001234567"; // Apna number yahan add karein
 
     const text =
-      `🎬 *New Booking Request - RIZVI STUDIO*%0A%0A` +
+      `🎬 *New Booking Request - Ft Production*%0A%0A` +
       `👤 Name: ${formData.name}%0A` +
       `🎯 Service: ${formData.service}%0A` +
       `📅 Date: ${formatDate(formData.date)}%0A` +

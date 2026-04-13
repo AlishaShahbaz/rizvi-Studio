@@ -33,7 +33,7 @@ const Home = () => {
                     {/* NAV BAR */}
                     <div className="flex flex-wrap md:flex-nowrap justify-between items-center mb-12 gap-4">
                         <div className="text-3xl font-black tracking-tighter italic">
-                            Rizvi <span className="text-hsq-peach">Studio.</span>
+                            Ft <span className="text-hsq-peach">Production.</span>
                         </div>
 
                         <nav className="flex flex-wrap md:flex-nowrap justify-end md:justify-center gap-4 md:gap-10 text-[10px] font-bold uppercase tracking-[0.3em] md:tracking-[0.4em] whitespace-nowrap">

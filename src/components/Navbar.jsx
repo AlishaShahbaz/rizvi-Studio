@@ -38,9 +38,9 @@ const Navbar = () => {
           {/* LOGO */}
           <Link to="/" className="group">
             <div className="text-2xl md:text-3xl font-black tracking-tighter italic text-white">
-              Rizvi{" "}
+              Ft{" "}
               <span className="text-hsq-peach group-hover:text-white transition-colors">
-                Studio.
+                Production.
               </span>
             </div>
           </Link>
