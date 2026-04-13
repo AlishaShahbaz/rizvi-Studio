@@ -31,11 +31,12 @@ const Home = () => {
                 <section className="glass-panel w-full min-h-[90vh] p-8 md:p-20 flex flex-col justify-between overflow-hidden">
 
                     {/* NAV BAR */}
-                    <div className="flex justify-between items-center mb-12">
+                    <div className="flex flex-wrap md:flex-nowrap justify-between items-center mb-12 gap-4">
                         <div className="text-3xl font-black tracking-tighter italic">
                             Rizvi <span className="text-hsq-peach">Studio.</span>
                         </div>
-                        <nav className="hidden lg:flex gap-10 text-[10px] font-bold uppercase tracking-[0.4em]">
+
+                        <nav className="flex flex-wrap md:flex-nowrap justify-end md:justify-center gap-4 md:gap-10 text-[10px] font-bold uppercase tracking-[0.3em] md:tracking-[0.4em] whitespace-nowrap">
                             <Link to="/gallery" className="hover:text-hsq-peach transition-all">Portfolio</Link>
                             <Link to="/wedding-sets" className="hover:text-hsq-peach transition-all">Wedding</Link>
                             <Link to="/props" className="hover:text-hsq-peach transition-all">Props</Link>

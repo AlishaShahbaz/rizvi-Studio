@@ -6,7 +6,6 @@ const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
 
-  // Scroll effect to change navbar background
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
@@ -24,20 +23,25 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 w-full z-[100] transition-all duration-500 ${isScrolled ? "py-4" : "py-8"
-        }`}
+      className={`fixed top-0 left-0 w-full z-[100] transition-all duration-500 ${
+        isScrolled ? "py-4" : "py-8"
+      }`}
     >
       <div className="max-w-[1600px] mx-auto px-6 md:px-10">
         <div
-          className={`glass-panel flex justify-between items-center px-8 py-4 transition-all duration-500 ${isScrolled
+          className={`glass-panel flex justify-between items-center px-8 py-4 transition-all duration-500 ${
+            isScrolled
               ? "bg-black/60 backdrop-blur-xl border-white/20 shadow-2xl"
               : "bg-black/20 backdrop-blur-md border-white/10 shadow-lg"
-            }`}
+          }`}
         >
           {/* LOGO */}
           <Link to="/" className="group">
             <div className="text-2xl md:text-3xl font-black tracking-tighter italic text-white">
-              Rizvi <span className="text-hsq-peach group-hover:text-white transition-colors">Studio.</span>
+              Rizvi{" "}
+              <span className="text-hsq-peach group-hover:text-white transition-colors">
+                Studio.
+              </span>
             </div>
           </Link>
 
@@ -47,13 +51,20 @@ const Navbar = () => {
               <li key={link.name}>
                 <Link
                   to={link.path}
-                  className={`text-[10px] font-bold uppercase tracking-[0.4em] transition-all hover:text-hsq-peach relative group ${location.pathname === link.path ? "text-hsq-peach" : "text-white/70"
-                    }`}
+                  className={`text-[10px] font-bold uppercase tracking-[0.4em] transition-all hover:text-hsq-peach relative group ${
+                    location.pathname === link.path
+                      ? "text-hsq-peach"
+                      : "text-white/70"
+                  }`}
                 >
                   {link.name}
-                  {/* Active Indicator Dot */}
-                  <span className={`absolute -bottom-2 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-hsq-peach transition-all duration-300 ${location.pathname === link.path ? "opacity-100 scale-100" : "opacity-0 scale-0 group-hover:opacity-50 group-hover:scale-100"
-                    }`} />
+                  <span
+                    className={`absolute -bottom-2 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-hsq-peach transition-all duration-300 ${
+                      location.pathname === link.path
+                        ? "opacity-100 scale-100"
+                        : "opacity-0 scale-0 group-hover:opacity-50 group-hover:scale-100"
+                    }`}
+                  />
                 </Link>
               </li>
             ))}
@@ -69,19 +80,25 @@ const Navbar = () => {
 
             {/* Mobile Menu Button */}
             <button
-              className="lg:hidden text-white p-2"
+              className="lg:hidden text-white p-2 z-[120]"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             >
-              <div className="w-6 h-0.5 bg-white mb-1.5 transition-all"></div>
-              <div className="w-6 h-0.5 bg-hsq-peach mb-1.5 transition-all"></div>
-              <div className="w-4 h-0.5 bg-white transition-all"></div>
+              <div className="w-6 h-0.5 bg-white mb-1.5"></div>
+              <div className="w-6 h-0.5 bg-hsq-peach mb-1.5"></div>
+              <div className="w-4 h-0.5 bg-white"></div>
             </button>
           </div>
         </div>
 
         {/* MOBILE OVERLAY MENU */}
-        <div className={`lg:hidden fixed inset-0 z-[110] bg-black/95 backdrop-blur-2xl transition-all duration-700 flex flex-col items-center justify-center space-y-8 ${isMobileMenuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none translate-y-10"
-          }`}>
+        <div
+          className={`lg:hidden fixed inset-0 z-[110] bg-black/95 backdrop-blur-2xl transition-all duration-500 flex flex-col items-center justify-center space-y-10 text-center ${
+            isMobileMenuOpen
+              ? "opacity-100 pointer-events-auto"
+              : "opacity-0 pointer-events-none"
+          }`}
+        >
+          {/* Close Button */}
           <button
             className="absolute top-10 right-10 text-white text-4xl font-thin"
             onClick={() => setIsMobileMenuOpen(false)}
@@ -89,19 +106,25 @@ const Navbar = () => {
             ×
           </button>
 
+          {/* NAV LINKS */}
           {navLinks.map((link) => (
             <Link
               key={link.name}
               to={link.path}
               onClick={() => setIsMobileMenuOpen(false)}
-              className="text-4xl font-black uppercase tracking-tighter italic hover:text-hsq-peach transition-all"
+              className={`text-2xl  uppercase  italic transition-all drop-shadow-lg ${
+                location.pathname === link.path
+                  ? "text-hsq-peach"
+                  : "text-white hover:text-hsq-peach"
+              }`}
             >
               {link.name}
             </Link>
           ))}
 
+          {/* CTA BUTTON */}
           <Link to="/booking" onClick={() => setIsMobileMenuOpen(false)}>
-            <button className="mt-8 bg-hsq-peach text-hsq-earth px-12 py-5 rounded-full font-black uppercase text-[11px] tracking-widest">
+            <button className="mt-6 bg-hsq-peach text-hsq-earth px-12 py-5 rounded-full font-black uppercase text-[11px] tracking-widest shadow-xl hover:scale-105 transition">
               Reserve Space
             </button>
           </Link>
